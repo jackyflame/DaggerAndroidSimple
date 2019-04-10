@@ -16,7 +16,10 @@ public class MyApplication extends DaggerApplication implements HasSupportFragme
 
     @Override
     protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
-        return DaggerAppComponent.create();
+        return DaggerAppComponent
+                .builder()
+                .application(this)
+                .build();
     }
 
     @Override
