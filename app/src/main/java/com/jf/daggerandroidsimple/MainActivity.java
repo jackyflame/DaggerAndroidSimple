@@ -2,11 +2,11 @@ package com.jf.daggerandroidsimple;
 
 import android.os.Bundle;
 
+import com.jf.daggerandroidsimple.base.BaseActivity;
+
 import javax.inject.Inject;
 
-import dagger.android.support.DaggerAppCompatActivity;
-
-public class MainActivity extends DaggerAppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     //@Inject
     //MainPresenter mainPresenter;

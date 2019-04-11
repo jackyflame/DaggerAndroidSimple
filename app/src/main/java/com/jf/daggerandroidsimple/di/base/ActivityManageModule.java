@@ -6,8 +6,8 @@ import com.jf.daggerandroidsimple.MainMoudle;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
-@Module(includes = {})
-public abstract class ActivityModule {
+@Module(subcomponents = {})
+public abstract class ActivityManageModule {
 
 
     @ContributesAndroidInjector(modules = {MainMoudle.class})

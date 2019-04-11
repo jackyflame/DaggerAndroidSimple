@@ -1,5 +1,9 @@
 package com.jf.daggerandroidsimple;
 
+import android.app.Activity;
+
+import com.jf.daggerandroidsimple.base.BaseActivity;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
@@ -11,12 +15,15 @@ import dagger.Provides;
 
 // 注意也要用抽象类和抽象方法
 @Module
-public abstract class MainMoudle {
+public abstract class MainMoudle{
     // 这个方法必须返回接口或抽象类，比如Presenter，不能直接返回MainPresenter
     // 方法的参数就是这个方法返回的是注入的对象，类似@Provides修饰的方法返回的对象
     // 这里的MainPresenter会通过上述声明的构造器注入自动构建
     @Binds
     abstract Presenter mainPresenter(MainPresenter mainPresenter);
+
+    @Binds
+    abstract Activity activityContext(BaseActivity mainActivity);
 
     @Qualifier
     @Retention(RetentionPolicy.RUNTIME)
@@ -37,5 +44,11 @@ public abstract class MainMoudle {
     static int getMainPresenterType() {
         return 200;
     }
+
+//    @Named("Activity")
+//    @Provides
+//    static Activity provideContext(BaseActivity mainActivity) {
+//        return mainActivity;
+//    }
 
 }
