@@ -9,12 +9,12 @@ import dagger.android.AndroidInjector;
 })
 public interface BaseActivityComponet extends AndroidInjector<BaseActivity> {
 
-//    @Subcomponent.Builder
-//    abstract class Builder extends AndroidInjector.Builder<BaseActivity>{}
-
     @Subcomponent.Builder
-    interface Builder{
-        BaseActivityComponet build();
-    }
+    abstract class Builder extends AndroidInjector.Builder<BaseActivity>{}
+
+//    @Subcomponent.Builder
+//    interface Builder{
+//        BaseActivityComponet build();
+//    }
 
 }
