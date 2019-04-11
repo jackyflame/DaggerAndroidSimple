@@ -3,6 +3,8 @@ package com.jf.daggerandroidsimple.di.base;
 import android.app.Application;
 import android.content.Context;
 
+import com.jf.daggerandroidsimple.di.fruit.Fruit;
+
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;

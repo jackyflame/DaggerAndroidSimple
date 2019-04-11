@@ -3,13 +3,17 @@ package com.jf.daggerandroidsimple.di.base;
 import android.app.Application;
 import android.content.Context;
 
+import com.jf.daggerandroidsimple.LogX;
+import com.jf.daggerandroidsimple.di.fruit.Fruit;
+import com.jf.daggerandroidsimple.di.fruit.FruitModle;
+
 import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
 
-@Module
+@Module(includes = {FruitModle.class})
 public class AppModule {
 
     @Singleton

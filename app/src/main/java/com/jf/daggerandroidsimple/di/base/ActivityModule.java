@@ -6,11 +6,11 @@ import com.jf.daggerandroidsimple.MainMoudle;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
-@Module
+@Module(includes = {})
 public abstract class ActivityModule {
 
 
-    @ContributesAndroidInjector(modules = MainMoudle.class)
+    @ContributesAndroidInjector(modules = {MainMoudle.class})
     abstract MainActivity mainActivity();// 绑定MainActivity
 
 }
