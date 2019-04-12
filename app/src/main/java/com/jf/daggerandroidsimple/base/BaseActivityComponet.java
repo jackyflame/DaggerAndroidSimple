@@ -5,16 +5,13 @@ import dagger.android.AndroidInjectionModule;
 import dagger.android.AndroidInjector;
 
 @Subcomponent(modules = {
-        AndroidInjectionModule.class
+        AndroidInjectionModule.class,
+        BaseActivityModule.class
 })
 public interface BaseActivityComponet extends AndroidInjector<BaseActivity> {
 
     @Subcomponent.Builder
     abstract class Builder extends AndroidInjector.Builder<BaseActivity>{}
 
-//    @Subcomponent.Builder
-//    interface Builder{
-//        BaseActivityComponet build();
-//    }
 
 }

@@ -1,15 +1,24 @@
 package com.jf.daggerandroidsimple.base;
 
-import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
 
-import dagger.Binds;
+import javax.inject.Named;
+
 import dagger.Module;
+import dagger.Provides;
 
 @Module
 public abstract class BaseActivityModule {
 
-    @Binds
-    abstract Activity activity(AppCompatActivity activity);
+    @Provides
+    static String provideTag(){
+        return "BaseActivityModule";
+    }
+
+    @Named("Activity")
+    @Provides
+    static Context provideContext(BaseActivity mainActivity) {
+        return mainActivity;
+    }
 
 }

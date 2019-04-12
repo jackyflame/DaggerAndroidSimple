@@ -1,6 +1,7 @@
 package com.jf.daggerandroidsimple;
 
 import android.app.Activity;
+import android.content.Context;
 
 import com.jf.daggerandroidsimple.di.fruit.Fruit;
 
@@ -20,7 +21,7 @@ public class MainPresenter implements Presenter {
 //    }
 
     @Inject
-    public MainPresenter(@Named("Oringe") Fruit fruit,Activity activity) {
+    public MainPresenter(@Named("Oringe") Fruit fruit, @Named("Activity") Context activity) {
         LogX.d("MainPresenter init：" + (fruit != null));
         LogX.d("MainPresenter init Activity =>" + (fruit != null ? activity.getClass().getSimpleName() : "null"));
         fruit.print();
@@ -28,6 +29,12 @@ public class MainPresenter implements Presenter {
 
 //    @Inject
 //    public MainPresenter(@Named("Oringe") Fruit fruit) {
+//        LogX.d("MainPresenter init：" + (fruit != null));
+//        fruit.print();
+//    }
+
+//    @Inject
+//    public MainPresenter(@Named("Oringe") Fruit fruit,String tag) {
 //        LogX.d("MainPresenter init：" + (fruit != null));
 //        fruit.print();
 //    }
